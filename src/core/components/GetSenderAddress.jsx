@@ -3,12 +3,12 @@ import React, { useState } from 'react';
 const GetSenderAddress = ({ label, updateLabel, changePage }) => {
 
   const [fromAdd, updateFrom] = useState({
-    'firstName': '',
-    'lastName': '',
-    'street': '',
-    'city': '',
-    'state': '',
-    'zip': '',
+    'firstName': label?.from?.firstName || '',
+    'lastName': label?.from?.lastName || '',
+    'street': label?.from?.street || '',
+    'city': label?.from?.city || '',
+    'state': label?.from?.state || '',
+    'zip': label?.from?.zip || '',
   });
 
   const handleChange = (e) => {

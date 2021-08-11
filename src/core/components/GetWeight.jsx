@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const GetWeight = ({ label, updateLabel, changePage }) => {
 
-  const [weight, updateWeight] = useState();
+  const [weight, updateWeight] = useState(label?.to?.weight || null);
 
   const handleChange = (e) => {
     updateWeight(Number(e.target.value));

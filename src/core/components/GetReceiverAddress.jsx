@@ -4,11 +4,11 @@ const GetReceiverAddress = ({ label, updateLabel, changePage }) => {
 
   const [toAdd, updateTo] = useState({
     'firstName': label?.to?.firstName || '',
-    'lastName': '',
-    'street': '',
-    'city': '',
-    'state': '',
-    'zip': '',
+    'lastName': label?.to?.lastName || '',
+    'street': label?.to?.street || '',
+    'city': label?.to?.city || '',
+    'state': label?.to?.state || '',
+    'zip': label?.to?.zip || '',
   });
 
   const handleChange = (e) => {

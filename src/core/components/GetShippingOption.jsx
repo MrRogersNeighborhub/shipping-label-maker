@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const GetShippingOption = ({ label, updateLabel, changePage }) => {
 
-  const [option, updateOption] = useState();
+  const [option, updateOption] = useState(label?.to?.shippingOption || null);
 
   const handleClick = (e) => {
     if (e.target.id === 'ground') updateOption(1);
@@ -24,7 +24,7 @@ const GetShippingOption = ({ label, updateLabel, changePage }) => {
       Shipping Option:<br />
       <button id='ground' onClick={ handleClick }>Ground</button>
       <button id='priority' onClick={ handleClick }>Priority</button>
-      {option !== undefined ? <div> You have selected {option === 1 ? 'ground' : 'priority' } shipping</div> : null}
+      {option !== null ? <div> You have selected {option === 1 ? 'ground' : 'priority' } shipping</div> : null}
       <button onClick={ handleNext }>Next</button>
       <button onClick={ handlePrev }>Previous</button>
     </div>

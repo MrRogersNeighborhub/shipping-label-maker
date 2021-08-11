@@ -4,29 +4,27 @@ const Confirm = ({ label }) => {
 
   return (
     <div>
-      { label.to.firstName }
-      { label.to.lastName }
-      <br></br>
+      { label.to.firstName + ' ' + label.to.lastName }
+      <br />
       { label.to.street }
-      <br></br>
+      <br />
       { label.to.city}
-      <br></br>
+      <br />
       { label.to.state }
-      <br></br>
+      <br />
       { label.to.zip }
-      <br></br>
-      { label.from.firstName }
-      { label.from.lastName }
-      <br></br>
+      <br />
+      { label.from.firstName + ' ' + label.from.lastName }
+      <br />
       { label.from.street }
-      <br></br>
+      <br />
       { label.from.city }
-      <br></br>
+      <br />
       { label.from.zip }
-      <br></br>
-      { label.shippingOption }
-      <br></br>
-      { label.weight }
+      <br />
+      { label.shippingOption === 1 ? 'Ground' : 'Priority' }
+      <br />
+      { label.weight + ' lbs.' }
     </div>
   )
 };
