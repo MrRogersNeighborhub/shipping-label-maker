@@ -9,24 +9,27 @@ const GetShippingOption = ({ label, updateLabel, changePage }) => {
     else updateOption(2);
   };
 
-  const handleNext = (e) => {
-    updateLabel({...label, shippingOption: option});
-    changePage('4');
-  };
+  // const handleNext = (e) => {
+  //   updateLabel({...label, shippingOption: option});
+  //   changePage('4');
+  // };
 
-  const handlePrev = (e) => {
-    updateLabel({...label, shippingOption: option});
-    changePage('2');
-  };
+  // const handlePrev = (e) => {
+  //   updateLabel({...label, shippingOption: option});
+  //   changePage('2');
+  // };
 
   return (
     <div>
       Shipping Option:<br />
+      { option !== null ?
+        <div> You have selected {option === 1 ? 'ground' : 'priority' } shipping</div> :
+         null
+      }
       <button id='ground' onClick={ handleClick }>Ground</button>
       <button id='priority' onClick={ handleClick }>Priority</button>
-      {option !== null ? <div> You have selected {option === 1 ? 'ground' : 'priority' } shipping</div> : null}
-      <button onClick={ handleNext }>Next</button>
-      <button onClick={ handlePrev }>Previous</button>
+      {/* <button onClick={ handleNext }>Next</button>
+      <button onClick={ handlePrev }>Previous</button> */}
     </div>
   );
 }

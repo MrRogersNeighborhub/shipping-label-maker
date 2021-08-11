@@ -42,10 +42,10 @@ const GetReceiverAddress = ({ label, updateLabel, changePage }) => {
     }
   };
 
-  const handleNext = (e) => {
-    updateLabel({ ...label, to: toAdd });
-    changePage('2');
-  };
+  // const handleNext = (e) => {
+  //   updateLabel({ ...label, to: toAdd });
+  //   changePage('2');
+  // };
 
   return (
     <div>
@@ -64,8 +64,8 @@ const GetReceiverAddress = ({ label, updateLabel, changePage }) => {
       <br />
       <label>Zip: </label>
       <input type="text" id="zip" onChange={ handleChange }></input>
-      <br />
-      <button onClick={ handleNext }>Next</button>
+      {/* <br />
+      <button onClick={ handleNext }>Next</button> */}
     </div>
   );
 }

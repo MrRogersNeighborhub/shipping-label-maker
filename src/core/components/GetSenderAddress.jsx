@@ -42,14 +42,14 @@ const GetSenderAddress = ({ label, updateLabel, changePage }) => {
     }
   };
 
-  const handleNext = (e) => {
-    updateLabel({ ...label, from: fromAdd });
-    changePage('3');
-  };
-  const handlePrev = (e) => {
-    updateLabel({ ...label, from: fromAdd });
-    changePage('1');
-  };
+  // const handleNext = (e) => {
+  //   updateLabel({ ...label, from: fromAdd });
+  //   changePage('3');
+  // };
+  // const handlePrev = (e) => {
+  //   updateLabel({ ...label, from: fromAdd });
+  //   changePage('1');
+  // };
 
   return (
     <div>
@@ -68,9 +68,9 @@ const GetSenderAddress = ({ label, updateLabel, changePage }) => {
       <br />
       <label>Zip: </label>
       <input type="text" id="zip" onChange={ handleChange }></input>
-      <br />
+      {/* <br />
       <button onClick={ handleNext }>Next</button>
-      <button onClick={ handlePrev }>Previous</button>
+      <button onClick={ handlePrev }>Previous</button> */}
     </div>
   );
 }
