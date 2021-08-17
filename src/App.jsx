@@ -5,10 +5,10 @@ import React, { useState } from 'react';
 
 function App() {
   const [label, updateLabel] = useState({
-    'to': {},
-    'from': {},
-    'weight': null,
-    'shippingOption': null,
+    'to' : {},
+    'from' : {},
+    'weight' : null,
+    'shippingOption' : null,
   });
   return (
     <div className="App">
