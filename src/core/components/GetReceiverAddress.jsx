@@ -16,7 +16,7 @@ const GetReceiverAddress = ({ label, updateLabel }) => {
         ...label,
         to : {
           ...label.to,
-          'street': e.target.value,
+          street : e.target.value,
         }
       })
     } else if (e.target.id === 'city') {
@@ -24,7 +24,7 @@ const GetReceiverAddress = ({ label, updateLabel }) => {
         ...label,
         to : {
           ...label.to,
-          'city': e.target.value,
+          city : e.target.value,
         }
       })
     } else if (e.target.id === 'state') {
@@ -32,7 +32,7 @@ const GetReceiverAddress = ({ label, updateLabel }) => {
         ...label,
         to : {
           ...label.to,
-          'state': e.target.value,
+          state : e.target.value,
         }
       })
     } else if (e.target.id === 'zip') {
@@ -40,7 +40,7 @@ const GetReceiverAddress = ({ label, updateLabel }) => {
         ...label,
         to : {
           ...label.to,
-          'zip': e.target.value,
+          zip : e.target.value,
         }
       })
     }
