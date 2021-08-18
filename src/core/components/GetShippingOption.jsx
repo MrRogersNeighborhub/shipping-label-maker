@@ -25,6 +25,7 @@ const GetShippingOption = ({ label, updateLabel }) => {
         <div>You have selected { label.shippingOption === 1 ? 'ground' : 'priority' } shipping</div> :
          null
       }
+      <br />
       <button id='ground' onClick={ handleClick }>Ground</button>
       <button id='priority' onClick={ handleClick }>Priority</button>
     </div>

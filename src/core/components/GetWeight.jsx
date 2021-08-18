@@ -3,7 +3,6 @@ import React from 'react';
 const GetWeight = ({ label, updateLabel }) => {
 
   const handleChange = (e) => {
-    // updateWeight(Number(e.target.value));
     updateLabel({
       ...label,
       weight : Number(e.target.value)
@@ -14,14 +13,12 @@ const GetWeight = ({ label, updateLabel }) => {
     <div>
       <b>Weight:</b>
       <br />
-      <label>Enter package weight
-        <input
+      <label>Enter package weight <input
           type='text'
           id='weight'
           onChange={ handleChange }
           value={ label.weight || null }
-        />
-        lbs
+        /> lbs.
       </label>
     </div>
   );
