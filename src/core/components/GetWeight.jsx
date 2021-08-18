@@ -1,30 +1,28 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const GetWeight = ({ label, updateLabel, changePage }) => {
-
-  const [weight, updateWeight] = useState(label?.to?.weight || null);
+const GetWeight = ({ label, updateLabel }) => {
 
   const handleChange = (e) => {
-    updateWeight(Number(e.target.value));
+    // updateWeight(Number(e.target.value));
+    updateLabel({
+      ...label,
+      weight : Number(e.target.value)
+    })
   };
-
-  // const handleNext = (e) => {
-  //   updateLabel({...label, weight: weight});
-  //   changePage('5');
-  // };
-
-  // const handlePrev = (e) => {
-  //   updateLabel({...label, weight: weight});
-  //   changePage('3');
-  // };
 
   return (
     <div>
-      Weight: <br />
-      <label>Enter package weight</label>
-      <input type='text' id='weight' onChange={ handleChange }></input>
-      {/* <button onClick={ handleNext }>Next</button>
-      <button onClick={ handlePrev }>Previous</button> */}
+      <b>Weight:</b>
+      <br />
+      <label>Enter package weight
+        <input
+          type='text'
+          id='weight'
+          onChange={ handleChange }
+          value={ label.weight || null }
+        />
+        lbs
+      </label>
     </div>
   );
 }

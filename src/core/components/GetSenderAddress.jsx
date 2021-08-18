@@ -1,16 +1,14 @@
 import React from 'react';
 
-const GetSenderAddress = ({ label, updateLabel, changePage }) => {
+const GetSenderAddress = ({ label, updateLabel }) => {
 
   const handleChange = (e) => {
     if (e.target.id === 'name') {
-      let nameArr = e.target.value.split(' ');
       updateLabel({
         ...label,
         from : {
           ...label.from,
-          'firstName': nameArr[0],
-          'lastName': nameArr[nameArr.length - 1],
+          name : e.target.value,
         }
       });
     } else if (e.target.id === 'street') {
@@ -57,10 +55,7 @@ const GetSenderAddress = ({ label, updateLabel, changePage }) => {
         type="text"
         id="name"
         onChange={ handleChange }
-        value={ label.from?.firstName !== undefined && label.from?.lastName !== undefined ?
-           label.from.firstName + ' ' + label.from.lastName :
-          null
-        }
+        value={ label.from?.name || null }
       />
       <br />
       <label>Street: </label>
@@ -68,7 +63,7 @@ const GetSenderAddress = ({ label, updateLabel, changePage }) => {
         type="text"
         id="street"
         onChange={ handleChange }
-        value={ label.from?.street !== undefined ? label.from.street : null }
+        value={ label.from?.street || null }
       />
       <br />
       <label>City: </label>
@@ -76,7 +71,7 @@ const GetSenderAddress = ({ label, updateLabel, changePage }) => {
         type="text"
         id="city"
         onChange={ handleChange }
-        value={ label.from?.city !== undefined ? label.from.city : null }
+        value={ label.from?.city || null }
       />
       <br />
       <label>State: </label>
@@ -84,7 +79,7 @@ const GetSenderAddress = ({ label, updateLabel, changePage }) => {
         type="text"
         id="state"
         onChange={ handleChange }
-        value={ label.from?.state !== undefined ? label.from.state : null }
+        value={ label.from?.state || null }
       />
       <br />
       <label>Zip: </label>
@@ -92,7 +87,7 @@ const GetSenderAddress = ({ label, updateLabel, changePage }) => {
         type="text"
         id="zip"
         onChange={ handleChange }
-        value={ label.from?.zip !== undefined ? label.from.zip : null }
+        value={ label.from?.zip || null }
       />
     </div>
   );

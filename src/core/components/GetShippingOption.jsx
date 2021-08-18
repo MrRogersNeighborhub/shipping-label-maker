@@ -1,35 +1,32 @@
-import React, { useState } from 'react';
+import React from 'react';
 
-const GetShippingOption = ({ label, updateLabel, changePage }) => {
+const GetShippingOption = ({ label, updateLabel }) => {
 
-  const [option, updateOption] = useState(label?.to?.shippingOption || null);
 
   const handleClick = (e) => {
-    if (e.target.id === 'ground') updateOption(1);
-    else updateOption(2);
+    if (e.target.id === 'ground') {
+      updateLabel({
+        ...label,
+        shippingOption : 1
+      })
+    } else {
+      updateLabel({
+        ...label,
+        shippingOption : 2
+      })
+    }
   };
-
-  // const handleNext = (e) => {
-  //   updateLabel({...label, shippingOption: option});
-  //   changePage('4');
-  // };
-
-  // const handlePrev = (e) => {
-  //   updateLabel({...label, shippingOption: option});
-  //   changePage('2');
-  // };
 
   return (
     <div>
-      Shipping Option:<br />
-      { option !== null ?
-        <div> You have selected {option === 1 ? 'ground' : 'priority' } shipping</div> :
+      <b>Shipping Option:</b>
+      <br />
+      { label.shippingOption !== null ?
+        <div>You have selected { label.shippingOption === 1 ? 'ground' : 'priority' } shipping</div> :
          null
       }
       <button id='ground' onClick={ handleClick }>Ground</button>
       <button id='priority' onClick={ handleClick }>Priority</button>
-      {/* <button onClick={ handleNext }>Next</button>
-      <button onClick={ handlePrev }>Previous</button> */}
     </div>
   );
 }

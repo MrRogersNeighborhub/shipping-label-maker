@@ -6,7 +6,7 @@ const Confirm = ({ label }) => {
     <div>
       <b>To:</b>
       <br />
-      { label.to.firstName + ' ' + label.to.lastName }
+      { label.to.name }
       <br />
       { label.to.street }
       <br />
@@ -15,7 +15,7 @@ const Confirm = ({ label }) => {
       <br />
       <b>From:</b>
       <br />
-      { label.from.firstName + ' ' + label.from.lastName }
+      { label.from.name }
       <br />
       { label.from.street }
       <br />
