@@ -5,7 +5,7 @@ const GetWeight = ({ label, updateLabel }) => {
   const handleChange = (e) => {
     updateLabel({
       ...label,
-      weight : Number(e.target.value)
+      weight : e.target.value
     })
   };
 
@@ -14,7 +14,8 @@ const GetWeight = ({ label, updateLabel }) => {
       <b>Weight:</b>
       <br />
       <label>Enter package weight <input
-          type='text'
+          type='number'
+          min='1'
           id='weight'
           onChange={ handleChange }
           value={ label.weight || null }
